@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Git Branching and Workflows</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Git Branching and Workflows">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/lib/jquery-1.8.0.min.js"></script>
+    <script src="js/lib/highlight-7.1.min.js"></script>
+    <script src="js/lib/jquerytypewriter.js"></script>
+    <script src="js/lib/underscore-1.3.3.min.js"></script>
+    <script src="js/lib/jquery.touchSwipe.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/sizer.js"></script>
+    <script src="js/bullets.js"></script>
+    <script src="js/trickster.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/custom.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+      $(window).load(function() {
+        TricksterTimer = TricksterTimer(TricksterDefaultConfig,{});
+        TricksterTimer.setup();
+
+        Trickster = TricksterLoader(TricksterDefaultConfig,{});
+        Trickster.load(TricksterTimer);
+
+      });
+    </script>
+  </head>
+  <body><div id="contents">
+    <section class='TITLE'>
+<h1>Git Branching and Workflows</h1>
+<h2>Jay Robohn</h2>
+<h3>CHSR - Research Foundation of SUNY</h3>
+</section>
+<section class='BULLETS'>
+<h1>Goals</h1>
+<ul>
+<li>Branching Refresher</li>
+<li><a href="http://nvie.com/files/Git-branching-model.pdf">Git Flow</a></li>
+<li>Strategies for both code and SQL repositories</li>
+<li>Allow us to work on version 2.0 while maintaining 1.x in a parallel track</li>
+</ul>
+</section>
+<section class='BULLETS'>
+<h1>Branching Refresher</h1>
+<ul>
+<li>Branches are created from a specific commit of another branch, normally <b><i>master</i></b></li>
+<li>Branches are used to isolate development without affecting the branch that is used for publishing</li>
+</ul>
+</section>
+<section class='FREEFORM'>
+<h1>My Branches</h1>
+<img src='MyBranches.png' alt='My Branches'>
+</section>
+<section class='BULLETS'>
+<h1>Git Flow Branching</h1>
+<ul>
+<li>Working in a different branch will not change your workflow. </li>
+<li>Code, commit and push (Sync) are the same.</li>
+<li>However, push becomes optional with Git Flow. </li>
+<li>Most of the time, we will not Sync to github.com.</li>
+<li>One more step when the development is complete: <b><i>merge</i></b></li>
+</ul>
+</section>
+<section class='FREEFORM'>
+<h1>The Branch Manage screen</h1>
+<h2>This is where merging is done.</h2>
+<img src='BranchManageScreen.png' alt='The Branch Manage screen; This is where merging is done.'>
+<h2>demo</h2>
+</section>
+<section class='FREEFORM'>
+<h1>Branching Strategy</h1>
+<ul>
+	<li>Git Branching is known for being:</li>
+	<ul>
+		<li>Simple</li>
+		<li>Lightweight</li>
+		<li>Useful</li>
+	</ul>
+	<li><strong>master</strong> is the default branch</li>
+	<ul>
+		<li>Therefore the one we normally work on</li>
+	</ul>
+	<li>Say hello to the <strong>develop</strong> branch</li>
+	<li>Get used to <strong>Feature-</strong> and <strong>BugFix-</strong> branches</li>
+</ul>
+</section>
+<section class='COMMANDLINE'>
+<pre><code class='no-highlight'><span class='cli-prompt'>&gt;</span> <span class='cli-element cli-command cli-line'> git status</span>
+<span class='cli-element cli-result'><span class='cli-line'>On branch develop</span>
+<span class='cli-line'>Your branch is up-to-date with 'origin/develop'.</span>
+<span class='cli-line'></span>
+<span class='cli-line'>Changes not staged for commit:</span>
+<span class='cli-line'>  (use "git add <file>..." to update what will be committed)</span>
+<span class='cli-line'>  (use "git checkout -- <file>..." to discard changes in working directory)</span>
+<span class='cli-line'></span>
+<span class='cli-line'>        modified:   HFNY/Default.aspx</span>
+<span class='cli-line'></span>
+<span class='cli-line'>no changes added to commit (use "git add" and/or "git commit -a")</span></span>
+<span class='cli-prompt'>&gt;</span> <span class='cli-element cli-command cli-line'> git branch</span>
+<span class='cli-element cli-result'><span class='cli-line'>  Bug-HW1026</span>
+<span class='cli-line'>  Bug-HW1026-rebase</span>
+<span class='cli-line'>  Bug-HW184</span>
+<span class='cli-line'>  Feature-AddGitVersioning</span>
+<span class='cli-line'>  Feature-AggregateCounts-Regions</span>
+<span class='cli-line'>  Feature-CaseHomePageOverhaul</span>
+<span class='cli-line'>  Feature-Demo</span>
+<span class='cli-line'>  Feature-Generic</span>
+<span class='cli-line'>  Feature-RemoveUnusedFiles</span>
+<span class='cli-line'>  Feature-ReportCatalogValidation</span>
+<span class='cli-line'>  Feature-Upgrade-jQuery</span>
+<span class='cli-line'>  Feature-UpgradeToVS2013</span>
+<span class='cli-line'>  Feature-UseSQLConnect</span>
+<span class='cli-line'>  Feature-Version2</span>
+<span class='cli-line'>* develop</span>
+<span class='cli-line'>  master</span></span>
+</code></pre>
+</section>
+
+    </div>
+    <aside id="timer">
+      <div id="clock">
+        <span class="hours">
+          <span id="hour">0</span> :
+        </span>
+        <span class="minutes">
+          <span id="minute">00</span> 
+        </span>
+        <span class="seconds"> : 
+          <span id="second">00</span>
+        </span>
+      </div>
+      <div id="controls">
+        <a id="stop" href="#" onclick="return TricksterTimer.stop();">◼</a>
+        <a id="play" href="#" onclick="return TricksterTimer.play();">▶</a>
+        <a id="pause" href="#" onclick="return TricksterTimer.pause();">▮▮</a>
+      </div>
+    </aside>    
+  </body>
+</html>

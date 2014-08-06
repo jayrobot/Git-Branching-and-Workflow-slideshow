@@ -1,0 +1,82 @@
+Git Branching and Workflows
+!TITLE
+Git Branching and Workflows
+Jay Robohn
+CHSR - Research Foundation of SUNY
+
+!BULLETS
+Goals
+* Branching Refresher
+* <a href="http://nvie.com/files/Git-branching-model.pdf">Git Flow</a>
+* Strategies for both code and SQL repositories
+* Allow us to work on version 2.0 while maintaining 1.x in a parallel track
+
+!BULLETS
+Branching Refresher
+* Branches are created from a specific commit of another branch, normally <b><i>master</i></b>
+* Branches are used to isolate development without affecting the branch that is used for publishing
+
+!FREEFORM
+<h1>My Branches</h1>
+<img src='MyBranches.png' alt='My Branches'>
+
+!BULLETS
+Git Flow Branching
+* Working in a different branch will not change your workflow. 
+* Code, commit and push (Sync) are the same.
+* However, push becomes optional with Git Flow. 
+* Most of the time, we will not Sync to github.com.
+* One more step when the development is complete: <b><i>merge</i></b>
+
+!FREEFORM
+<h1>The Branch Manage screen</h1>
+<h2>This is where merging is done.</h2>
+<img src='BranchManageScreen.png' alt='The Branch Manage screen; This is where merging is done.'>
+<h2>demo</h2>
+
+!FREEFORM
+<h1>Branching Strategy</h1>
+<ul>
+	<li>Git Branching is known for being:</li>
+	<ul>
+		<li>Simple</li>
+		<li>Lightweight</li>
+		<li>Useful</li>
+	</ul>
+	<li><strong>master</strong> is the default branch</li>
+	<ul>
+		<li>Therefore the one we normally work on</li>
+	</ul>
+	<li>Say hello to the <strong>develop</strong> branch</li>
+	<li>Get used to <strong>Feature-</strong> and <strong>BugFix-</strong> branches</li>
+</ul>
+
+!COMMANDLINE
+> git status
+On branch develop
+Your branch is up-to-date with 'origin/develop'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   HFNY/Default.aspx
+
+no changes added to commit (use "git add" and/or "git commit -a")
+> git branch
+  Bug-HW1026
+  Bug-HW1026-rebase
+  Bug-HW184
+  Feature-AddGitVersioning
+  Feature-AggregateCounts-Regions
+  Feature-CaseHomePageOverhaul
+  Feature-Demo
+  Feature-Generic
+  Feature-RemoveUnusedFiles
+  Feature-ReportCatalogValidation
+  Feature-Upgrade-jQuery
+  Feature-UpgradeToVS2013
+  Feature-UseSQLConnect
+  Feature-Version2
+* develop
+  master
