@@ -1,8 +1,12 @@
-Git Branching and Workflows
+Git Workflows
 !TITLE
-Git Branching and Workflows
+Git Workflows
 Jay Robohn
-CHSR - Research Foundation of SUNY
+
+!TITLE
+Who Am I?
+CHSR-SSW-UAlbany-RF-SUNY
+GH-jayrobot TW-jayrobotic EM-jrobohn@albany.edu
 
 !BULLETS
 Goals
@@ -22,10 +26,19 @@ Branching Refresher
 
 !BULLETS
 Git Flow Branching
-* Working in a different branch will not change your workflow. 
-* Code, commit and push (Sync) are the same.
-* However, push becomes optional with Git Flow. 
-* Most of the time, we will not Sync to github.com.
+* Two long-lived (or immortal) branches; master and develop
+* master - stable, legacy branch aka 1.x
+* develop - current, in-development branch aka 2.0 
+* Three types of temporary, short-lived branches
+* Feature
+* Release
+* BugFix
+
+* Working in a different branch will not change your workflow
+* Code, commit and push (Sync) are the same
+* Make a habit of checking current branch (GitHub Windows and VS2013)
+* However, push becomes optional with a Git Flow branch
+* Most of the time, we will not Sync to github.com, unless you need to share
 * One more step when the development is complete: <b><i>merge</i></b>
 
 !FREEFORM
